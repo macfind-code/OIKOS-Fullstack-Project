@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file">
+    <button id="load"></button>
+</body>
+<script>
+    var input = document.querySelector('input[type="file"]')
+    var load = document.querySelector('#load')
+    // acceder au boutton parcourir
+    load.addEventListener('click', function(){
+        input.click()
+    })
+    //recuperer les donnee de la photo
+    //specifier le type de fichier avec mime
+    input.addEventListener('change', function(){
+        var file = this.files[0]
+        var mime = file.type
+        if(mime.match(/image\/*/)){
+            var reader = new FileReader()
+            reader.onload = function(){
+                var img = document.createElement('img')
+                img.src = reader.result
+                document.body.appendChild(img)
+            }
+            reader.readAsDataURL(file)
+        }
+    })
+
+
+
+</script>
+</html>

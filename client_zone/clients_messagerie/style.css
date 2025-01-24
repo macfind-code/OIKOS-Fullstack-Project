@@ -1,0 +1,230 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    --red: #DD3F57;
+}
+
+#contenaire{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    width: 100dvw;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    border-radius: 30px;
+}
+#oikos{
+    position: relative;
+    top: -36px;
+    padding-bottom: 0.5em;
+    border-bottom:2px solid #d4d4d4;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#espace-messages{
+    height: 80%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 10px;
+  
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    
+    
+   
+    
+  
+}
+.message-zone{
+    height: 835px;
+    width: 805px;
+    position: absolute;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: -1px 4px 103px rgba(0, 0, 0, 0.178);
+    transition: all 1s ease-in-out;
+}
+#write-zone{
+    height: 30px;
+    width: 95%;
+    background: #ececec;
+    border-radius: 5px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+    
+  
+}
+#write-zone input{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    background: none;
+}
+#write-zone button{
+    height: 100%;
+    width: 50px;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+#write-zone button svg{
+  background: none;
+  
+}
+
+.zap{
+    animation: zap 0.7s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    animation-fill-mode: forwards;
+}
+@keyframes zap{
+  0%{
+    opacity: 1;
+    transform: translateX(-5px);
+  }
+  80%{
+    transform: translateX(100px);
+    opacity: 0;
+  }
+    100%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+}
+
+.recever_box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.receiver{
+    display: inline-block;
+  
+    max-width: 60%;
+    word-wrap: break-word;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    cursor: pointer;
+    transition: 0.1s;
+    min-width: 150px;
+    font-size: 14px;
+    background: rgb(230, 225, 225);
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 5px;
+   
+    color: rgb(34, 34, 34);
+    animation: activmessage 0.2s ease-in;
+    overflow: hidden;
+    margin-left:0.5em ;
+}
+.receiver:hover{
+    transform: scale(1.05);
+    background-position: left top;
+   
+}
+.sender{
+    display: inline-block;
+    word-wrap: break-word;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    max-width: 60%;
+    min-width: 150px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 5px;
+    background: var(--red);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.11);
+    color: rgb(255, 255, 255);
+    animation: recevmessage 0.5s ease-in;
+    overflow: hidden;
+    font-size: 14px;
+}
+#close svg:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+    fill: #f03b3b;
+}
+
+.visible{
+    display: flex;
+}
+
+#close{
+   
+    opacity: 0;
+    z-index: 5;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.lueur{
+    animation: lueur 0.5s infinite ease-in-out;
+}
+@keyframes lueur{
+   0%{
+       opacity: 0;
+   }
+   50%{
+       opacity: 1;
+       filter: brightness(2);
+   }
+   100%{
+       opacity: 0;
+       filter: brightness(0);
+   }
+}
+
+@media screen and (max-width: 900px){
+
+    #espace-messages{
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+       overflow-y: scroll; 
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+             
+    }
+    .message-zone{
+        height: 90%;
+        width: 95%;
+    }
+    #oikos{
+      background-color: #f5f5f5;
+      height: 100px;
+    }
+
+}

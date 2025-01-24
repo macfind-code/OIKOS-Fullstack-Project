@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impossible de charger la page</title>
+</head>
+<body>
+    <div><p>Votre compte est inactif, impossible de charger la page.</p></div>
+    <div><p>Veuillez contacter l'équipe de support pour plus d'informations.</p></div>
+
+    <div><button id="link-btn">Retour à la page d'acceuil</button></div>
+
+    <script>
+        const linkBtn = document.getElementById('link-btn')
+            linkBtn.addEventListener('click', () => {
+                window.location.href = '../../public_zone/homepage.php'
+            })
+    </script>
+</body>
+</html>
